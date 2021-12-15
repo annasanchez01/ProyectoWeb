@@ -5,23 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Inicio</title>
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/styles.css">
-    <!-- Carga el núcleo de Firebase JS SDK-->
-  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-<!-- Agrega el manejo deautenticación.-->
-<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
-<!--Agrega el manejo de bases de datos.-->
+
+     <!-- Carga el núcleo de Firebase JS SDK-->
+  <script 
+  src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js">
+  </script>
+  <!-- Agrega el manejo deautenticación.-->
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  <!--Agrega el manejo de bases de datos.-->
 <script  src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+
 <!--Configura la app usando la información del sitio deFirebase.-->
 <script src="js/init.js"></script>
 <script type="module" src="cmp/mi-nav.js"></script>
 <script type="module"src="cmp/mi-footer.js"></script>
 <script type="module"src="cmp/mi-progreso.js"></script>
 
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos.css">
+   
 </head>
-
 <body>
     <header class="site-header inicio">
         <div class="contenedor contenido-header">
@@ -46,7 +49,8 @@
 
     <section class="contenedor seccion">
         <h2 class="fw-300 centrar-texto">Bienvenido</h2>
-
+        <form name="forma">
+          <mi-nav></mi-nav>
         <figure>
             <img id="avatar" src=""
               alt="Avatar">
@@ -87,7 +91,7 @@
     </section>
 
 
-
+  </form>
 <mi-footer></mi-footer>
 <script type="module"
   src="js/CtrlSesion.js">
