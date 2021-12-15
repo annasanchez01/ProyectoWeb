@@ -1,5 +1,4 @@
-import {
-  getAuth,
+import { getAuth,
   getFirestore
 } from "../lib/fabrica.js";
 import {
@@ -10,14 +9,11 @@ const firestore = getFirestore();
 const daoUsuario = firestore.
   collection("Usuario");
 
-export async function
-  iniciaSesión() {
+export async function iniciaSesión() {
   /** Tipo de autenticación de
    * usuarios. En este caso es con
    * Google.
-   * @type {import(
-      "../lib/tiposFire.js").
-      GoogleAuthProvider} */
+   * @type {import("../lib/tiposFire.js").GoogleAuthProvider} */
   const provider =
     // @ts-ignore
     new firebase.auth.
@@ -30,7 +26,6 @@ export async function
   await getAuth().
     signInWithRedirect(provider);
 }
-
 /** @param {import(
     "../lib/tiposFire.js").User}
     usuario
@@ -47,9 +42,7 @@ export async function
         return true;
       }
     }
-    alert("No autorizado.");
-    location.href = "index.html";
-  } else {
+     } else {
     iniciaSesión();
   }
   return false;
@@ -67,15 +60,20 @@ export async function
 /** @param {string} email
  * @returns {Promise<Set<string>>}
  */
-export async function cargaRoles(email) {
-  let doc = await daoUsuario.doc(email).get();
+export async function
+  cargaRoles(email) {
+  let doc =
+    await daoUsuario.
+      doc(email).
+      get();
   if (doc.exists) {
     /**
      * @type {
         import("./tipos.js").
         Usuario} */
     const data = doc.data();
-    return new Set(data.rolIds || []);
+    return new Set(
+      data.rolIds || []);
   } else {
     return new Set();
   }
