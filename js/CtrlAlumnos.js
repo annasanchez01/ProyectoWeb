@@ -48,13 +48,7 @@ function htmlLista(snap) {
   if (snap.size > 0) {
     snap.forEach(doc =>
       html += htmlFila(doc));
-  } else {
-    html += /* html */
-      `<li class="vacio">
-        -- No hay alumnos
-        registrados. --
-      </li>`;
-  }
+  } 
   lista.innerHTML = html;
 }
 
