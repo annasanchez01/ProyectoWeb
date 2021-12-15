@@ -1,8 +1,5 @@
 @import "mi-nav.css";
 @import "listas.css";
-
-
-
 html {
     box-sizing: border-box;
     font-size: 62.5%; /** Reset para REMS - 62.5% = 10px de 16px **/
@@ -69,7 +66,7 @@ h4 {
     border: none;
     border-radius: 7px;
     display: block;
-    flex: 0 0 100%;
+    flex: auto auto 100%;
 }
 @media (min-width: 768px) {
     .boton {
@@ -86,7 +83,13 @@ h4 {
 .boton-verde {
     background-color: #71B100;
 }
-
+.boton-azul {
+    background-color: #10a4d1;
+    float: right;
+}
+.boton-morado {
+    background-color: #aa1de2;
+}
 
 /* Header */
 .site-header {
@@ -132,7 +135,7 @@ h4 {
 @media (min-width: 768px) {
     .navegacion a {
         display: inline-block;
-        font-size: 20px; /** = 18px **/
+        font-size: 15px; /** = 18px **/
         margin-right: 2rem;
     }
     .navegacion a:last-of-type {
@@ -164,9 +167,6 @@ h4 {
     }
 }
 
-
-
-/** Contacto Home **/
 .imagen-contacto {
     background-image: url(../img/encuentra.jpg);
     background-position: center center;
@@ -188,6 +188,7 @@ h4 {
 .site-footer {
     background-color: #333333;
     margin: 0;
+    float: inline-end;
 }
 .contenedor-footer {
     padding: 3rem 0;
@@ -213,31 +214,6 @@ h4 {
     color: #ffffff;
 }
 
-/** INTERNAS **/
-/* Nosotros **/
-@media (min-width: 768px) {
-    .contenido-nosotros {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-column-gap: 2rem;
-    }
-}
-
-.texto-nosotros blockquote {
-    font-weight: 900;
-    font-size: 2rem;
-    margin: 0;
-    padding: 1rem 0 3rem 0;
-}
-
-/** Anuncio **/
-.resumen-propiedad {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-/** Contacto **/
 .contacto p {
     font-size: 1.4rem;
     color: #4f4f4f;
@@ -263,10 +239,7 @@ select {
     border: none;
     border-radius: 1rem;
 }
-input[type="radio"]{
-    width: auto;
-    margin: 0;
-}
+
 select {
     -webkit-appearance: none;
     appearance: none;
