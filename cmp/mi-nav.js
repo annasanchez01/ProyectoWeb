@@ -21,7 +21,7 @@ class MiNav extends HTMLElement {
             Registrar Entrada / Salida</a>
         </li>
         <li>
-        <a href="alumnoNuevo.html">
+        <a href="usuarioNuevo.html">
           Justificar Inasistencia</a>
       </li>
       <li>
