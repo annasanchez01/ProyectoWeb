@@ -1,9 +1,6 @@
 import { getAuth,
   getFirestore
 } from "../lib/fabrica.js";
-import {
-  muestraError
-} from "../lib/util.js";
 
 const firestore = getFirestore();
 const daoUsuario = firestore.
@@ -42,8 +39,6 @@ export async function
         return true;
       }
     }
-     } else {
-    iniciaSesión();
   }
   return false;
 }
