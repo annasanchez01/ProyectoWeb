@@ -45,44 +45,39 @@
       </div> <!-- contenedor -->
 </header>
 <main class="contenedor seccion contenido-centrado">
-  <form name="forma">
-      <h1>Llena los siguientes datos:</h1>
-      <p>
-      <label>
-        Matricula
-        <input name="matricula"  type="text" required>
-      </label>
-    </p>
-    <p>
-      <label>
-        Nombre
-        <input name="nombre"  type="text" required>
-      </label>
-    </p>
-    <p>
-      <label>  
-      Teléfono  
-      <input name="telefono"type="text" required>
-      </label>
-    </p>
-    <p>
-      <label>
-        Grupo
-        <input name="grupo"
-          type="text" required>
-      </label>
-    </p>
-    <p>
-      <label>
-        Fecha
-        <input name="fecha"
-          type="date" required>
-      </label>
-    </p>
-      <div class="herramientas">
-        <a href="alumnos.html" class="boton boton-amarillo">Cancelar</a>
-        <button type="submit" class="boton boton-verde"> Guardar </button>
-      </div>
+  <form class="contacto" name="forma">
+    <h1>Llena los siguientes datos:</h1>
+        <p>
+      <fieldset>
+          <legend>Información Personal</legend>
+          <label for="nombre">Nombre:</label>
+          <input type="text" name="nombre" placeholder="Tu Nombre" required>
+
+          <label for="empleado">Número de empleado: </label>
+          <input type="number" name="matricula" placeholder="No. de empleado" required>
+      </fieldset>
+
+      <fieldset>
+        <legend>Checador: </legend>
+
+        <label for="opciones">Entrada o Salida</label>
+          <select id="opciones" required>
+            <option value="" disabled selected>-- Seleccione --</option>
+            <option value="Entrada">Entrada</option>
+            <option value="Salida">Salida</option>
+          </select>
+
+        <label for="fecha">Fecha:</label>
+        <input type="date" name="fecha" required>
+
+        <label for="hora">Hora:</label>
+        <input type="time" name="hora" min="07:00" max="20:00" required>
+    </fieldset>
+
+    <div class="herramientas">
+      <a href="alumnos.html" class="boton boton-amarillo">Cancelar</a>
+      <button type="submit" class="boton boton-verde"> Guardar </button>
+    </div>
   </form>
 </main>
   <script type="module"
