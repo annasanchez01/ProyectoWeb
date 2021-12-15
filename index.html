@@ -26,11 +26,12 @@
    
 </head>
 <body>
+  <form name="forma">
     <header class="site-header inicio">
         <div class="contenedor contenido-header">
             <div class="barra">
                 <a href="/">
-                    <img src="img/Imagen.jpg" alt="Logotipo de Bienes Raices">
+                    <img src="img/Imagen.jpg" alt="Logotipo">
                 </a>
 
                 <div class="mobile-menu">
@@ -39,18 +40,16 @@
                     </a>
                 </div>
                 <nav id="navegacion" class="navegacion">
-                    <mi-nav></mi-nav>
+                <mi-nav></mi-nav>
                     <script type="module" src="cmp/mi-nav.js"></script>
                 </nav>
             </div>
-           
-        </div> <!-- contenedor -->
+          </div> <!-- contenedor -->
     </header>
 
     <section class="contenedor seccion">
         <h2 class="fw-300 centrar-texto">Bienvenido</h2>
-        <form name="forma">
-          <mi-nav></mi-nav>
+       
         <figure>
             <img id="avatar" src=""
               alt="Avatar">
@@ -78,7 +77,7 @@
           <button  type="button" name="terminarSesión" class="boton boton-verde">
           Terminar Sesión
         </button>
-
+  </form>
     </section>
           
     <section class="imagen-contacto">
@@ -90,8 +89,6 @@
         </div>
     </section>
 
-
-  </form>
 <mi-footer></mi-footer>
 <script type="module"
   src="js/CtrlSesion.js">
