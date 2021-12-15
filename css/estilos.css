@@ -2,12 +2,7 @@
 @import "mi-footer.css";
 @import "listas.css";
 
-:root {
-  font-family: sans-serif;
-  --col-active: #4646462c;
-  --color-header: white;
-  --colorMiNav: white;
-}
+
 
 html {
     box-sizing: border-box;
