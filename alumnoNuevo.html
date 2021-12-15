@@ -1,63 +1,72 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport"
-    content="width=device-width,
-       initial-scale=1.0">
-  <title>
-    Alumno Nuevo
-  </title>
-  <script
-    src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-  <script
-    src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
-  <script
-    src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
-  <script src="js/init.js">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Registrar</title>
+
+     <!-- Carga el núcleo de Firebase JS SDK-->
+  <script 
+  src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js">
   </script>
-  <script type="module"
-    src="cmp/mi-nav.js">
-    </script>
-  <script type="module"
-    src="cmp/mi-footer.js">
-    </script>
-  <link rel="stylesheet"
-    href="css/estilos.css">
+  <!-- Agrega el manejo deautenticación.-->
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  <!--Agrega el manejo de bases de datos.-->
+<script  src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+
+<!--Configura la app usando la información del sitio deFirebase.-->
+<script src="js/init.js"></script>
+<script type="module" src="cmp/mi-nav.js"></script>
+<script type="module"src="cmp/mi-footer.js"></script>
+<script type="module"src="cmp/mi-progreso.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
+  <header class="site-header inicio">
+    <div class="contenedor contenido-header">
+        <div class="barra">
+            <a href="/ProyectoWeb/">
+                <img src="img/Imagen.jpg" alt="Logotipo">
+            </a>
+
+            <div class="mobile-menu">
+                <a href="#navegacion">
+                    <img src="img/barras.svg" alt="Icono Menu">
+                </a>
+            </div>
+            <nav id="navegacion" class="navegacion">
+            <mi-nav></mi-nav>
+                <script type="module" src="cmp/mi-nav.js"></script>
+            </nav>
+        </div>
+      </div> <!-- contenedor -->
+</header>
+
   <form name="forma">
-    <mi-nav></mi-nav>
-    <header>
-      <h1>Alumno Nuevo</h1>
+      <h1>Llena los siguientes datos:</h1>
       <div class="herramientas">
-        <a
-          href="alumnos.html">
-          Cancelar</a>
-        <button type="submit">
-          Guardar
-        </button>
+        <a href="alumnos.html" class="boton boton-amarillo">Cancelar</a>
+        <button type="submit" class="boton boton-verde"> Guardar </button>
       </div>
-    </header>
     <p>
       <label>
         Matricula
-        <input name="matricula"
-          type="text" required>
+        <input name="matricula"  type="text" required>
       </label>
     </p>
     <p>
       <label>
         Nombre
-        <input name="nombre"
-          type="text" required>
+        <input name="nombre"  type="text" required>
       </label>
     </p>
     <p>
-      <label>
-        Teléfono
-        <input name="telefono"
-          type="text" required>
+      <label>  
+      Teléfono  
+      <input name="telefono"type="text" required>
       </label>
     </p>
     <p>
@@ -74,11 +83,19 @@
           type="date" required>
       </label>
     </p>
-    <mi-footer></mi-footer>
   </form>
+
   <script type="module"
     src="js/CtrlAlumnoNuevo.js">
     </script>
+<footer class="site-footer seccion">
+  <div class="contenedor contenedor-footer">
+      <nav class="navegacion">
+          <mi-nav></mi-nav>
+          <script type="module" src="cmp/mi-nav.js"></script>
+      </nav>
+      <p class="copyright">Ana Paula Sánchez Villanueva &copy; </p>
+  </div>
+</footer>
 </body>
 </html>
-
