@@ -51,19 +51,25 @@
 
   <form name="forma">
     <fieldset>
-      <label for="mensaje"> Mensaje: </label>    
+      <label for="mensaje"> Escribe tu mensaje: </label>    
         <input name="texto" required placeholder="Mensaje">
-          <button class="boton boton-verde"> Enviar </button>
+      <button class="boton boton-azul"> Enviar </button>
+  </fieldset>
 
-    <ul id="lista" class="lista">
+  <fieldset>
+    <legend>Mensajes:</legend>
+      <ul id="lista" class="lista">
       <li>
         <mi-progreso>
         </mi-progreso>
       </li>
     </ul>
+
+  </fieldset>
+    
     </fieldset>
-  </form> 
-    </main>
+    </form>
+  </main> 
 
   <script type="module"src="js/CtrlChat.js"></script>
 
