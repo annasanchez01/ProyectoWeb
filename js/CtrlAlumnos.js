@@ -52,7 +52,7 @@ function htmlFila(doc) {
   parámetros.append("id", doc.id);
   return ( /* html */
     `<li>
-        <strong class="primario">  ${nombre} ${matricula}${checar}${dformat}${hora}
+        <strong class="primario">  ${nombre} ${checar}${dformat}${hora}${matricula}
         </strong>
    
     </li>`);
