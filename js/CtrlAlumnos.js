@@ -45,15 +45,16 @@ function htmlFila(doc) {
   const matricula = cod(data.matricula);
   const checar = cod(data.checar);
   var hora = cod(data.hora);
-  var hr = new Date (hr);
+  var hr = new Date (hora);
   var fsf= cod(data.fecha);
   var fecha = new Date(fsf);
   var dformat = [fecha.getDate()+1, fecha.getMonth()+1, fecha.getFullYear()].join('/');
+  var hformat = [hr.getHours(), hr.getMinutes(), hr.getSeconds()].join('/');
   const parámetros = new URLSearchParams();
   parámetros.append("id", doc.id);
   return ( /* html */
     `<li>
-        <strong class="primario">  ${nombre} ${checar}${dformat}${hora}
+        <strong class="primario">  ${nombre} ${checar}${dformat}${hformat}
         </strong>
     </li>`);
 }
