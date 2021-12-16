@@ -19,9 +19,20 @@ class MiNav extends HTMLElement {
     this.ul =
       this.querySelector("ul");
     getAuth().onAuthStateChanged(
-      usuario => this.
-        cambiaUsuario(usuario),
-      muestraError);
+      usuario => this. cambiaUsuario(usuario), muestraError);
+      const roles = await cargaRoles(usuario.email);
+      if (roles.has("Cliente")) {
+         html += /* html */
+           `<li>
+           <a href="alumnos.html"> Registrar Entrada / Salida</a>
+             </li>
+              <li>
+            <a href="usuarioNuevo.html"> Justificar Inasistencia</a>
+            </li>
+            <li>
+         <a href="chat.html">Contacto </a>
+       </li>`;
+       }
   }
 
   /**
