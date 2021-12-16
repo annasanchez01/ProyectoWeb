@@ -13,26 +13,26 @@ class MiNav extends HTMLElement {
     this.innerHTML = /* html */
       `<ul>
         <li>
-          <a href="index.html">Usuario</a>
+          <a href="index.html">
+              Usuario</a>
         </li>
+        <li>
+          <a href="alumnos.html">
+            Registrar Entrada / Salida</a>
+        </li>
+        <li>
+        <a href="usuarioNuevo.html">
+          Justificar Inasistencia</a>
+      </li>
+      <li>
+        <a href="chat.html">
+          Contacto </a>
+      </li>
       </ul>`;
     this.ul =
       this.querySelector("ul");
     getAuth().onAuthStateChanged(
-      usuario => this. cambiaUsuario(usuario), muestraError);
-      const roles = await cargaRoles(usuario.email);
-      if (roles.has("Cliente")) {
-         html += /* html */
-           `<li>
-           <a href="alumnos.html"> Registrar Entrada / Salida</a>
-             </li>
-              <li>
-            <a href="usuarioNuevo.html"> Justificar Inasistencia</a>
-            </li>
-            <li>
-         <a href="chat.html">Contacto </a>
-       </li>`;
-       }
+      usuario => this.cambiaUsuario(usuario),muestraError);
   }
 
   /**
@@ -42,30 +42,15 @@ class MiNav extends HTMLElement {
   async cambiaUsuario(usu) {
     if (usu && usu.email) {
       let html = "";
-      const roles = await cargaRoles(usu.email);
-     if (roles.has("Cliente")) {
-        html += /* html */
-          `<li>
-          <a href="alumnos.html"> Registrar Entrada / Salida</a>
-            </li>
-             <li>
-           <a href="usuarioNuevo.html"> Justificar Inasistencia</a>
-           </li>
-           <li>
-        <a href="chat.html">Contacto </a>
-      </li>`;
-      }
-      if (roles.has(
+      const roles =await cargaRoles(usu.email);
+        if (roles.has(
         "Administrador")) {
         html += /* html */
           `<li>
-          <a href="alumnos.html"> Ver registro de empleados</a>
+            <a href="usuario.html">Dar de alta</a>
           </li>
-           <li>
-         <a href="usuarioNuevo.html"> Dar de alta </a>
-         </li>
-         <li>
-      <a href="chat.html">Chat </a>
+          <li>
+            <a href="alumnos.html">Ver registro</a>
           </li>`;
       }
       this.ul.innerHTML += html;
