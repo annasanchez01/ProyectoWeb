@@ -13,7 +13,7 @@ import {
 
 /** @type {HTMLUListElement} */
 const lista = document.querySelector("#lista");
-const daoAlumno =getFirestore().collection("Alumno");
+const daoEmpleado =getFirestore().collection("Empleado");
 
 getAuth().onAuthStateChanged(protege, muestraError);
 
@@ -27,7 +27,7 @@ async function protege(usuario) {
 }
 
 function consulta() {
-  daoAlumno.orderBy("nombre").onSnapshot(htmlLista, errConsulta);
+  daoEmpleado.orderBy("nombre").onSnapshot(htmlLista, errConsulta);
 }
 
 function htmlLista(snap) {
@@ -41,20 +41,20 @@ function htmlLista(snap) {
 function htmlFila(doc) {
   const data = doc.data();
 
-  const nombre = cod(data.nombre);
+  const nombre = cod (data.nombre);
   const matricula = cod(data.matricula);
   const checar = cod(data.checar);
-  const hora = cod(data.hora);
+  var hora = cod(data.hora);
   var fsf= cod(data.fecha);
   var fecha = new Date(fsf);
   var dformat = [fecha.getDate()+1, fecha.getMonth()+1, fecha.getFullYear()].join('/');
+  var hformat = [fecha.getHours(), fecha.getMinutes(), fecha.getSeconds()].join('/');
   const parámetros = new URLSearchParams();
   parámetros.append("id", doc.id);
   return ( /* html */
     `<li>
-        <strong class="primario">  ${nombre} ${checar}${dformat}${hora}${matricula}
+        <strong class="primario">  ${nombre} ${checar}${dformat}${hformat}
         </strong>
-   
     </li>`);
 }
 
