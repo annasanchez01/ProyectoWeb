@@ -31,7 +31,6 @@ async function guarda(evt) {
     evt.preventDefault();
     const formData =
       new FormData(forma);
-
     const nombre = getString(formData, "nombre").trim();  
     const matricula = getString(formData, "matricula").trim();
     const checar = getString(formData, "checar").trim();
