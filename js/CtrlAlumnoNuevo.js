@@ -54,4 +54,3 @@ async function guarda(evt) {
     muestraError(e);
   }
 }
-
