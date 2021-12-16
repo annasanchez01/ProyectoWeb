@@ -27,10 +27,7 @@ async function protege(usuario) {
 }
 
 function consulta() {
-  daoAlumno.
-    orderBy("nombre")
-    .onSnapshot(
-    htmlLista, errConsulta);
+  daoAlumno.orderBy("nombre").onSnapshot(htmlLista, errConsulta);
 }
 
 function htmlLista(snap) {
@@ -55,11 +52,9 @@ function htmlFila(doc) {
   parámetros.append("id", doc.id);
   return ( /* html */
     `<li>
-      <a class="fila" href="alumno.html?${parámetros}">
         <strong class="primario">  ${nombre} ${matricula}${checar}${dformat}${hora}
         </strong>
-      </a>
-     
+   
     </li>`);
 }
 
@@ -68,5 +63,4 @@ function errConsulta(e) {
   muestraError(e);
   consulta();
 }
-
 
